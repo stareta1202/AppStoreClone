@@ -13,6 +13,18 @@
 		1296798727BE63890036953B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1296798527BE63890036953B /* Main.storyboard */; };
 		1296798927BE638B0036953B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1296798827BE638B0036953B /* Assets.xcassets */; };
 		1296798C27BE638B0036953B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1296798A27BE638B0036953B /* LaunchScreen.storyboard */; };
+		1296799527BE672B0036953B /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 1296799427BE672B0036953B /* SnapKit */; };
+		1296799827BE67380036953B /* AddThen in Frameworks */ = {isa = PBXBuildFile; productRef = 1296799727BE67380036953B /* AddThen */; };
+		1296799B27BE678C0036953B /* CombineCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 1296799A27BE678C0036953B /* CombineCocoa */; };
+		1296799E27BE68EC0036953B /* ErrorFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1296799D27BE68EC0036953B /* ErrorFactory.swift */; };
+		129679A327BE6A250036953B /* AppleStoreSearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 129679A227BE6A250036953B /* AppleStoreSearchService.swift */; };
+		129679A627BE6C4F0036953B /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 129679A527BE6C4F0036953B /* Realm */; };
+		129679A827BE6C4F0036953B /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 129679A727BE6C4F0036953B /* RealmSwift */; };
+		129679AB27BE78BA0036953B /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 129679AA27BE78BA0036953B /* SearchViewController.swift */; };
+		129679AD27BE85CF0036953B /* SearchViewCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 129679AC27BE85CF0036953B /* SearchViewCore.swift */; };
+		129679AF27BEA5F60036953B /* AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 129679AE27BEA5F60036953B /* AppModel.swift */; };
+		129679B127BFC7A50036953B /* SearchRecentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 129679B027BFC7A50036953B /* SearchRecentTableViewCell.swift */; };
+		129679B327BFCBD10036953B /* RecentSearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 129679B227BFCBD10036953B /* RecentSearchModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +36,13 @@
 		1296798827BE638B0036953B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1296798B27BE638B0036953B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1296798D27BE638B0036953B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1296799D27BE68EC0036953B /* ErrorFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorFactory.swift; sourceTree = "<group>"; };
+		129679A227BE6A250036953B /* AppleStoreSearchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleStoreSearchService.swift; sourceTree = "<group>"; };
+		129679AA27BE78BA0036953B /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		129679AC27BE85CF0036953B /* SearchViewCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewCore.swift; sourceTree = "<group>"; };
+		129679AE27BEA5F60036953B /* AppModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppModel.swift; sourceTree = "<group>"; };
+		129679B027BFC7A50036953B /* SearchRecentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRecentTableViewCell.swift; sourceTree = "<group>"; };
+		129679B227BFCBD10036953B /* RecentSearchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentSearchModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +50,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1296799527BE672B0036953B /* SnapKit in Frameworks */,
+				1296799B27BE678C0036953B /* CombineCocoa in Frameworks */,
+				129679A627BE6C4F0036953B /* Realm in Frameworks */,
+				129679A827BE6C4F0036953B /* RealmSwift in Frameworks */,
+				1296799827BE67380036953B /* AddThen in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,6 +80,10 @@
 		1296797E27BE63890036953B /* AppleStore */ = {
 			isa = PBXGroup;
 			children = (
+				129679A127BE691E0036953B /* Model */,
+				129679A027BE69150036953B /* Scene */,
+				1296799F27BE690A0036953B /* Service */,
+				1296799C27BE68E10036953B /* Protocol */,
 				1296797F27BE63890036953B /* AppDelegate.swift */,
 				1296798127BE63890036953B /* SceneDelegate.swift */,
 				1296798327BE63890036953B /* ViewController.swift */,
@@ -65,6 +93,49 @@
 				1296798D27BE638B0036953B /* Info.plist */,
 			);
 			path = AppleStore;
+			sourceTree = "<group>";
+		};
+		1296799C27BE68E10036953B /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				1296799D27BE68EC0036953B /* ErrorFactory.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		1296799F27BE690A0036953B /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				129679A227BE6A250036953B /* AppleStoreSearchService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		129679A027BE69150036953B /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+				129679A927BE78900036953B /* SearchView */,
+			);
+			path = Scene;
+			sourceTree = "<group>";
+		};
+		129679A127BE691E0036953B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				129679AE27BEA5F60036953B /* AppModel.swift */,
+				129679B227BFCBD10036953B /* RecentSearchModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		129679A927BE78900036953B /* SearchView */ = {
+			isa = PBXGroup;
+			children = (
+				129679AA27BE78BA0036953B /* SearchViewController.swift */,
+				129679AC27BE85CF0036953B /* SearchViewCore.swift */,
+				129679B027BFC7A50036953B /* SearchRecentTableViewCell.swift */,
+			);
+			path = SearchView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +154,13 @@
 			dependencies = (
 			);
 			name = AppleStore;
+			packageProductDependencies = (
+				1296799427BE672B0036953B /* SnapKit */,
+				1296799727BE67380036953B /* AddThen */,
+				1296799A27BE678C0036953B /* CombineCocoa */,
+				129679A527BE6C4F0036953B /* Realm */,
+				129679A727BE6C4F0036953B /* RealmSwift */,
+			);
 			productName = AppleStore;
 			productReference = 1296797C27BE63890036953B /* AppleStore.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +189,12 @@
 				Base,
 			);
 			mainGroup = 1296797327BE63890036953B;
+			packageReferences = (
+				1296799327BE672B0036953B /* XCRemoteSwiftPackageReference "SnapKit" */,
+				1296799627BE67380036953B /* XCRemoteSwiftPackageReference "addthen" */,
+				1296799927BE678C0036953B /* XCRemoteSwiftPackageReference "CombineCocoa" */,
+				129679A427BE6C4F0036953B /* XCRemoteSwiftPackageReference "realm-swift" */,
+			);
 			productRefGroup = 1296797D27BE63890036953B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -138,9 +222,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				129679AB27BE78BA0036953B /* SearchViewController.swift in Sources */,
+				129679AD27BE85CF0036953B /* SearchViewCore.swift in Sources */,
+				129679B327BFCBD10036953B /* RecentSearchModel.swift in Sources */,
 				1296798427BE63890036953B /* ViewController.swift in Sources */,
+				129679AF27BEA5F60036953B /* AppModel.swift in Sources */,
 				1296798027BE63890036953B /* AppDelegate.swift in Sources */,
 				1296798227BE63890036953B /* SceneDelegate.swift in Sources */,
+				1296799E27BE68EC0036953B /* ErrorFactory.swift in Sources */,
+				129679B127BFC7A50036953B /* SearchRecentTableViewCell.swift in Sources */,
+				129679A327BE6A250036953B /* AppleStoreSearchService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -360,6 +451,69 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		1296799327BE672B0036953B /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				branch = develop;
+				kind = branch;
+			};
+		};
+		1296799627BE67380036953B /* XCRemoteSwiftPackageReference "addthen" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/stareta1202/addthen";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+		1296799927BE678C0036953B /* XCRemoteSwiftPackageReference "CombineCocoa" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/CombineCommunity/CombineCocoa";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.4.0;
+			};
+		};
+		129679A427BE6C4F0036953B /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.20.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		1296799427BE672B0036953B /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1296799327BE672B0036953B /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		1296799727BE67380036953B /* AddThen */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1296799627BE67380036953B /* XCRemoteSwiftPackageReference "addthen" */;
+			productName = AddThen;
+		};
+		1296799A27BE678C0036953B /* CombineCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1296799927BE678C0036953B /* XCRemoteSwiftPackageReference "CombineCocoa" */;
+			productName = CombineCocoa;
+		};
+		129679A527BE6C4F0036953B /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 129679A427BE6C4F0036953B /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = Realm;
+		};
+		129679A727BE6C4F0036953B /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 129679A427BE6C4F0036953B /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 1296797427BE63890036953B /* Project object */;
 }
