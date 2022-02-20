@@ -25,6 +25,9 @@
 		129679AF27BEA5F60036953B /* AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 129679AE27BEA5F60036953B /* AppModel.swift */; };
 		129679B127BFC7A50036953B /* SearchRecentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 129679B027BFC7A50036953B /* SearchRecentTableViewCell.swift */; };
 		129679B327BFCBD10036953B /* RecentSearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 129679B227BFCBD10036953B /* RecentSearchModel.swift */; };
+		129679B527C2112F0036953B /* AppCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 129679B427C2112E0036953B /* AppCollectionViewCell.swift */; };
+		129679B827C220480036953B /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 129679B727C220480036953B /* UIImageView+Extension.swift */; };
+		129679BA27C220A70036953B /* ImageCacheService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 129679B927C220A70036953B /* ImageCacheService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +46,9 @@
 		129679AE27BEA5F60036953B /* AppModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppModel.swift; sourceTree = "<group>"; };
 		129679B027BFC7A50036953B /* SearchRecentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRecentTableViewCell.swift; sourceTree = "<group>"; };
 		129679B227BFCBD10036953B /* RecentSearchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentSearchModel.swift; sourceTree = "<group>"; };
+		129679B427C2112E0036953B /* AppCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCollectionViewCell.swift; sourceTree = "<group>"; };
+		129679B727C220480036953B /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
+		129679B927C220A70036953B /* ImageCacheService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacheService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +86,7 @@
 		1296797E27BE63890036953B /* AppleStore */ = {
 			isa = PBXGroup;
 			children = (
+				129679B627C220380036953B /* Extension */,
 				129679A127BE691E0036953B /* Model */,
 				129679A027BE69150036953B /* Scene */,
 				1296799F27BE690A0036953B /* Service */,
@@ -107,6 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				129679A227BE6A250036953B /* AppleStoreSearchService.swift */,
+				129679B927C220A70036953B /* ImageCacheService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -134,8 +142,17 @@
 				129679AA27BE78BA0036953B /* SearchViewController.swift */,
 				129679AC27BE85CF0036953B /* SearchViewCore.swift */,
 				129679B027BFC7A50036953B /* SearchRecentTableViewCell.swift */,
+				129679B427C2112E0036953B /* AppCollectionViewCell.swift */,
 			);
 			path = SearchView;
+			sourceTree = "<group>";
+		};
+		129679B627C220380036953B /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				129679B727C220480036953B /* UIImageView+Extension.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -228,10 +245,13 @@
 				1296798427BE63890036953B /* ViewController.swift in Sources */,
 				129679AF27BEA5F60036953B /* AppModel.swift in Sources */,
 				1296798027BE63890036953B /* AppDelegate.swift in Sources */,
+				129679B827C220480036953B /* UIImageView+Extension.swift in Sources */,
 				1296798227BE63890036953B /* SceneDelegate.swift in Sources */,
+				129679BA27C220A70036953B /* ImageCacheService.swift in Sources */,
 				1296799E27BE68EC0036953B /* ErrorFactory.swift in Sources */,
 				129679B127BFC7A50036953B /* SearchRecentTableViewCell.swift in Sources */,
 				129679A327BE6A250036953B /* AppleStoreSearchService.swift in Sources */,
+				129679B527C2112F0036953B /* AppCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

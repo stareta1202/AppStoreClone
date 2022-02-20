@@ -32,26 +32,20 @@ class SearchViewCore: ObservableObject {
     
     func add(_ searchText: String) {
         searchService.getList(searchText)
-            .map { appResponse in
-                return appResponse.results
-            }.sink { error in
-                print("😡 error: \(error)")
-            } receiveValue: { [weak self] appModels in
-                self?.appModels = appModels
-            }
+            .map({ $0.results })
+            .replaceError(with: [])
+            .assign(to: \.appModels, on: self)
             .store(in: &subscription)
         
         try? realm.write({
             let model = RecentSearchModel()
             model.title = searchText
             if !recentSearchModelCollection.recentSearchModels.contains(where: { model in
-                return model.title == csearchText
+                return model.title == searchText
             }) {
-                print("😡 in1")
                 recentSearchModelCollection.recentSearchModels.append(model)
                 realm.add(model, update: .modified)
             }
-            print("😡 in2")
         })
     }
     
