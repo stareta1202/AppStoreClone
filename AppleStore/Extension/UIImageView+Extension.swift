@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 extension UIImageView {
-    func setImage(_ url: String?) {
+    func setImage(_ url: String?, _ closure:  ((UIImage) -> Void)? = nil) {
         guard let url = url else { return }
 
         DispatchQueue.global(qos: .background).async {
@@ -17,6 +17,7 @@ extension UIImageView {
             DispatchQueue.main.async {
                 if let cachedImage = ImageCacheService.shared.object(forKey: cachedKey) {
                     self.image = cachedImage
+                    closure?(cachedImage)
                     return
                 }
             }
@@ -33,9 +34,18 @@ extension UIImageView {
                     if let data = data, let image = UIImage(data: data) {
                         ImageCacheService.shared.setObject(image, forKey: cachedKey)
                         self?.image = image
+                        closure?(image)
                     }
                 }
             }.resume()
         }
+    }
+}
+
+extension UIImageView {
+    func withCorner(_ amount: CGFloat) -> UIImageView {
+        self.clipsToBounds = true
+        self.layer.cornerRadius = amount
+        return self
     }
 }

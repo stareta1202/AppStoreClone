@@ -30,6 +30,18 @@ struct AppModel: Decodable {
     var currency: String
     var price: Double
     var description: String
+    var userRatingCount: Int
+    
+    var releaseDate: Date? {
+        let dateFormatter = ISO8601DateFormatter()
+        let date = dateFormatter.date(from: currentVersionReleaseDate)
+        return date
+    }
+    
+    var megaBytes: Double {
+        guard let bytes = Double(fileSizeBytes) else { return Double(0)}
+        return bytes / (1_024 * 1_024)
+    }
     
     enum CodingKeys: String, CodingKey {
         case minimumOsVersion,
@@ -42,7 +54,8 @@ struct AppModel: Decodable {
              releaseNotes,
              currency,
              price,
-             description
+             description,
+             userRatingCount
         case name = "trackName"
         case genre = "primaryGenreName"
         case icon = "artworkUrl512"
@@ -70,5 +83,6 @@ struct AppModel: Decodable {
         self.screenshots = try values.decode([String].self, forKey: .screenshots)
         self.supportedLanguages = try values.decode([String].self, forKey: .supportedLangauges)
         self.appVersion = try values.decode(String.self, forKey: .appVersion)
+        self.userRatingCount = try values.decode(Int.self, forKey: .userRatingCount)
     }
 }

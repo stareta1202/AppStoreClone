@@ -35,7 +35,6 @@ class SearchViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(NSTemporaryDirectory())
         initView()
         bind(core: core)
     }
@@ -60,6 +59,9 @@ class SearchViewController: UIViewController {
         view.add(collectionView) { [unowned self] in
             $0.delegate = self
             $0.dataSource = self
+            let refreshController = UIRefreshControl()
+            refreshController.addTarget(self, action: #selector(self.refreshPhotos), for: .valueChanged)
+            $0.refreshControl = refreshController
             $0.snp.makeConstraints { make in
                 make.edges.equalToSuperview()
             }
@@ -92,12 +94,15 @@ class SearchViewController: UIViewController {
             setupCollectionView()
         }
     }
+    @objc private func refreshPhotos() {
+        core.next()
+    }
 }
 
 // MARK: Binding
 extension SearchViewController {
     func bind(core: SearchViewCore) {
-        core.$researchModels
+        core.$recentSearchModels
             .sink { [weak self] researchModels in
                 guard let self = self else { return }
                 self.researchModels = researchModels
@@ -171,7 +176,7 @@ extension SearchViewController: UICollectionViewDelegate {
 extension SearchViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let cellWidth = collectionView.frame.width
-        let cellHeight = cellWidth
+        let cellHeight = cellWidth * 0.9
         return CGSize(width: cellWidth, height: cellHeight)
     }
 
@@ -179,16 +184,19 @@ extension SearchViewController: UICollectionViewDelegateFlowLayout {
 
 extension SearchViewController: UICollectionViewDataSourcePrefetching {
     func collectionView(_ collectionView: UICollectionView, prefetchItemsAt indexPaths: [IndexPath]) {
-        
+        if core.appModels.count == 0 { return }
+        guard let row = indexPaths.first?.row else { return }
+        if  row == core.appModels.count - 1 {
+            core.next()
+        }
     }
-    
-    
 }
 
 // MARK: UISearchResultsUpdating
 extension SearchViewController: UISearchResultsUpdating, UISearchBarDelegate {
     func updateSearchResults(for searchController: UISearchController) {
         guard let text = searchController.searchBar.text else {return}
+        layoutType = .recent
         filteredResearchModels = researchModels.filter({
             $0.title.localizedStandardContains(text) == true
         })

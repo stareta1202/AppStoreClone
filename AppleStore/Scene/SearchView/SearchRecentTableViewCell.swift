@@ -10,6 +10,4 @@ import UIKit
 
 class SearchRecentTableViewCell: UITableViewCell {
     static let identifier = "SearchRecentTableViewCell"
-    
-    
 }

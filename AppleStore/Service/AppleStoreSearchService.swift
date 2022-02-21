@@ -14,8 +14,8 @@ class AppleStoreSearchService {
     static let shared = AppleStoreSearchService()
     private let urlSession = URLSession.shared
     
-    func getList(_ query: String) -> AnyPublisher<AppResponse, Error> {
-        let url = "https://itunes.apple.com/search?term=\(query)&entity=software,iPadSoftware&limit=10".addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed) ?? ""
+    func getList(_ query: String, _ limit: Int = 25) -> AnyPublisher<AppResponse, Error> {
+        let url = "https://itunes.apple.com/search?term=\(query)&entity=software,iPadSoftware&limit=\(limit)".addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed) ?? ""
         guard let queryUrl = URL(string:url) else {
             return Fail(error: ErrorFactory.invalidUrl()).eraseToAnyPublisher()
         }

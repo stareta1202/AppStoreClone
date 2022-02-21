@@ -12,9 +12,11 @@
 		1283468827C3704E008F2FAD /* UserInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1283468727C3704E008F2FAD /* UserInterface.swift */; };
 		1283468A27C3A023008F2FAD /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1283468927C3A023008F2FAD /* DetailView.swift */; };
 		1283468D27C3A0EE008F2FAD /* ReleaseNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1283468C27C3A0EE008F2FAD /* ReleaseNoteView.swift */; };
+		1283469127C3C8AA008F2FAD /* DescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1283469027C3C8AA008F2FAD /* DescriptionView.swift */; };
+		1283469327C3CE5B008F2FAD /* RateAndReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1283469227C3CE5B008F2FAD /* RateAndReviewView.swift */; };
+		1283469527C3D4F6008F2FAD /* InformationItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1283469427C3D4F6008F2FAD /* InformationItemView.swift */; };
 		1296798027BE63890036953B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1296797F27BE63890036953B /* AppDelegate.swift */; };
 		1296798227BE63890036953B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1296798127BE63890036953B /* SceneDelegate.swift */; };
-		1296798427BE63890036953B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1296798327BE63890036953B /* ViewController.swift */; };
 		1296798727BE63890036953B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1296798527BE63890036953B /* Main.storyboard */; };
 		1296798927BE638B0036953B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1296798827BE638B0036953B /* Assets.xcassets */; };
 		1296798C27BE638B0036953B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1296798A27BE638B0036953B /* LaunchScreen.storyboard */; };
@@ -42,10 +44,12 @@
 		1283468727C3704E008F2FAD /* UserInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInterface.swift; sourceTree = "<group>"; };
 		1283468927C3A023008F2FAD /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		1283468C27C3A0EE008F2FAD /* ReleaseNoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReleaseNoteView.swift; sourceTree = "<group>"; };
+		1283469027C3C8AA008F2FAD /* DescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionView.swift; sourceTree = "<group>"; };
+		1283469227C3CE5B008F2FAD /* RateAndReviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateAndReviewView.swift; sourceTree = "<group>"; };
+		1283469427C3D4F6008F2FAD /* InformationItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationItemView.swift; sourceTree = "<group>"; };
 		1296797C27BE63890036953B /* AppleStore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppleStore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1296797F27BE63890036953B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1296798127BE63890036953B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		1296798327BE63890036953B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		1296798627BE63890036953B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1296798827BE638B0036953B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1296798B27BE638B0036953B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -94,6 +98,9 @@
 			children = (
 				1283468927C3A023008F2FAD /* DetailView.swift */,
 				1283468C27C3A0EE008F2FAD /* ReleaseNoteView.swift */,
+				1283469027C3C8AA008F2FAD /* DescriptionView.swift */,
+				1283469227C3CE5B008F2FAD /* RateAndReviewView.swift */,
+				1283469427C3D4F6008F2FAD /* InformationItemView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -125,7 +132,6 @@
 				1296799C27BE68E10036953B /* Protocol */,
 				1296797F27BE63890036953B /* AppDelegate.swift */,
 				1296798127BE63890036953B /* SceneDelegate.swift */,
-				1296798327BE63890036953B /* ViewController.swift */,
 				1296798527BE63890036953B /* Main.storyboard */,
 				1296798827BE638B0036953B /* Assets.xcassets */,
 				1296798A27BE638B0036953B /* LaunchScreen.storyboard */,
@@ -285,12 +291,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1283469327C3CE5B008F2FAD /* RateAndReviewView.swift in Sources */,
 				129679AB27BE78BA0036953B /* SearchViewController.swift in Sources */,
 				129679AD27BE85CF0036953B /* SearchViewCore.swift in Sources */,
 				1283468D27C3A0EE008F2FAD /* ReleaseNoteView.swift in Sources */,
 				1283468527C36AF3008F2FAD /* UIVIew+Extension.swift in Sources */,
 				129679B327BFCBD10036953B /* RecentSearchModel.swift in Sources */,
-				1296798427BE63890036953B /* ViewController.swift in Sources */,
+				1283469527C3D4F6008F2FAD /* InformationItemView.swift in Sources */,
 				129679AF27BEA5F60036953B /* AppModel.swift in Sources */,
 				1296798027BE63890036953B /* AppDelegate.swift in Sources */,
 				129679B827C220480036953B /* UIImageView+Extension.swift in Sources */,
@@ -302,6 +309,7 @@
 				129679B127BFC7A50036953B /* SearchRecentTableViewCell.swift in Sources */,
 				129679BF27C27FE80036953B /* CoreBindable.swift in Sources */,
 				129679A327BE6A250036953B /* AppleStoreSearchService.swift in Sources */,
+				1283469127C3C8AA008F2FAD /* DescriptionView.swift in Sources */,
 				1283468827C3704E008F2FAD /* UserInterface.swift in Sources */,
 				129679B527C2112F0036953B /* AppCollectionViewCell.swift in Sources */,
 			);

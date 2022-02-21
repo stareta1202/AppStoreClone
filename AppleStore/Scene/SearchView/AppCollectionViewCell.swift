@@ -17,9 +17,9 @@ class AppCollectionViewCell: UICollectionViewCell {
     private var getButton = UIButton()
     private var screenshotImageStackView = UIStackView()
     private var screenshotImageViews: [UIImageView] = [
-        UIImageView(),
-        UIImageView(),
-        UIImageView(),
+        UIImageView().withCorner(12),
+        UIImageView().withCorner(12),
+        UIImageView().withCorner(12),
         ]
     private var ratingView = CosmosView()
     
@@ -33,11 +33,8 @@ class AppCollectionViewCell: UICollectionViewCell {
         return nil
     }
     
-    
-    
     private func initView() {
         contentView.add(iconImageView) {
-            $0.backgroundColor = .blue
             $0.layer.masksToBounds = true
             $0.layer.cornerRadius = 12
             $0.snp.makeConstraints { make in
@@ -94,7 +91,7 @@ class AppCollectionViewCell: UICollectionViewCell {
             
             $0.addArranged(self.screenshotImageViews) {
                 $0.forEach {
-                    $0.contentMode = .scaleAspectFit
+                    $0.contentMode = .scaleAspectFill
                 }
             }
             $0.snp.makeConstraints { make in
@@ -125,3 +122,4 @@ class AppCollectionViewCell: UICollectionViewCell {
         }
     }
 }
+
