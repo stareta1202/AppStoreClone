@@ -13,7 +13,7 @@ import SnapKit
 import RealmSwift
 
 class SearchViewController: UIViewController {
-    private var subscription = Set<AnyCancellable>()
+    private var subscription: Set<AnyCancellable> = .init()
     private let searchController = UISearchController(searchResultsController: nil)
     private let tableView = UITableView(frame: .zero, style: .plain)
     private let collectionView: UICollectionView = .init(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
@@ -133,6 +133,14 @@ extension SearchViewController: UITableViewDataSource {
 // MARK: UITableView Delegate
 
 extension SearchViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let text = isFiltering ? filteredResearchModels[indexPath.row].title : researchModels[indexPath.row].title
+        searchController.searchBar.text = text
+        searchController.isActive = true
+        searchController.searchBar.resignFirstResponder()
+        core.add(text)
+        layoutType = .result
+    }
 }
 
 // MARK: UICollectionView DataSource
@@ -154,14 +162,13 @@ extension SearchViewController: UICollectionViewDataSource {
 // MARK: UICollectionView Delegate
 
 extension SearchViewController: UICollectionViewDelegate {
-
 }
 
 // MARK: UICollectionViewDelegateFlowLayout
 extension SearchViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let cellWidth = collectionView.frame.width
-        let cellHeight = 1.2 * cellWidth
+        let cellHeight = cellWidth
         return CGSize(width: cellWidth, height: cellHeight)
     }
 
@@ -183,6 +190,10 @@ extension SearchViewController: UISearchResultsUpdating, UISearchBarDelegate {
             $0.title.localizedStandardContains(text) == true
         })
         tableView.reloadData()
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        layoutType = .recent
     }
 
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {

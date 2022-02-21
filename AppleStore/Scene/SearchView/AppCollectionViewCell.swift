@@ -15,9 +15,11 @@ class AppCollectionViewCell: UICollectionViewCell {
     private var descriptionLabel = UILabel()
     private var getButton = UIButton()
     private var screenshotImageStackView = UIStackView()
-    private var screenshotImageViews: [UIImageView] = []
-    
-    
+    private var screenshotImageViews: [UIImageView] = [
+        UIImageView(),
+        UIImageView(),
+        UIImageView(),
+        ]
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -34,6 +36,8 @@ class AppCollectionViewCell: UICollectionViewCell {
     private func initView() {
         contentView.add(iconImageView) {
             $0.backgroundColor = .blue
+            $0.layer.masksToBounds = true
+            $0.layer.cornerRadius = 12
             $0.snp.makeConstraints { make in
                 make.top.leading.equalToSuperview().inset(20)
                 make.width.height.equalTo(60)
@@ -68,11 +72,42 @@ class AppCollectionViewCell: UICollectionViewCell {
                 make.centerY.equalTo(self.iconImageView)
             }
         }
+        
+        contentView.add(screenshotImageStackView) { [unowned self] in
+            $0.axis = .horizontal
+            $0.spacing = 4
+            $0.distribution = .fillEqually
+            
+            $0.addArranged(self.screenshotImageViews) {
+                $0.forEach {
+                    $0.contentMode = .scaleAspectFit
+                }
+            }
+            $0.snp.makeConstraints { make in
+                make.leading.trailing.bottom.equalToSuperview().inset(20)
+                make.top.equalTo(self.iconImageView.snp.bottom).offset(20)
+            }
+        }
     }
     
     func configure(_ appModel: AppModel) {
         self.titleLabel.text = appModel.name
         self.descriptionLabel.text = appModel.genre
         self.iconImageView.setImage(appModel.icon)
+        if appModel.price != 0 {
+            let handler: UIButton.ConfigurationUpdateHandler = {
+                var container = AttributeContainer()
+                container.font = UIFont.boldSystemFont(ofSize: 14)
+                $0.configuration?.attributedTitle = AttributedString("$\(appModel.price)", attributes: container)
+            }
+            getButton.configurationUpdateHandler = handler
+        }
+        DispatchQueue.main.async {
+            for (i, v) in appModel.screenshots.enumerated() {
+                if i > 2 { return }
+                self.screenshotImageViews[i].setImage(v)
+            }
+        }
+        
     }
 }

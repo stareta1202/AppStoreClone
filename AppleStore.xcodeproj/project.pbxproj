@@ -28,6 +28,8 @@
 		129679B527C2112F0036953B /* AppCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 129679B427C2112E0036953B /* AppCollectionViewCell.swift */; };
 		129679B827C220480036953B /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 129679B727C220480036953B /* UIImageView+Extension.swift */; };
 		129679BA27C220A70036953B /* ImageCacheService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 129679B927C220A70036953B /* ImageCacheService.swift */; };
+		129679BD27C27E1B0036953B /* ItemDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 129679BC27C27E1B0036953B /* ItemDetailViewController.swift */; };
+		129679BF27C27FE80036953B /* CoreBindable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 129679BE27C27FE80036953B /* CoreBindable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +51,8 @@
 		129679B427C2112E0036953B /* AppCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCollectionViewCell.swift; sourceTree = "<group>"; };
 		129679B727C220480036953B /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 		129679B927C220A70036953B /* ImageCacheService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacheService.swift; sourceTree = "<group>"; };
+		129679BC27C27E1B0036953B /* ItemDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailViewController.swift; sourceTree = "<group>"; };
+		129679BE27C27FE80036953B /* CoreBindable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreBindable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				1296799D27BE68EC0036953B /* ErrorFactory.swift */,
+				129679BE27C27FE80036953B /* CoreBindable.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -122,6 +127,7 @@
 		129679A027BE69150036953B /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				129679BB27C232D80036953B /* ItemDetailView */,
 				129679A927BE78900036953B /* SearchView */,
 			);
 			path = Scene;
@@ -153,6 +159,14 @@
 				129679B727C220480036953B /* UIImageView+Extension.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		129679BB27C232D80036953B /* ItemDetailView */ = {
+			isa = PBXGroup;
+			children = (
+				129679BC27C27E1B0036953B /* ItemDetailViewController.swift */,
+			);
+			path = ItemDetailView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -247,9 +261,11 @@
 				1296798027BE63890036953B /* AppDelegate.swift in Sources */,
 				129679B827C220480036953B /* UIImageView+Extension.swift in Sources */,
 				1296798227BE63890036953B /* SceneDelegate.swift in Sources */,
+				129679BD27C27E1B0036953B /* ItemDetailViewController.swift in Sources */,
 				129679BA27C220A70036953B /* ImageCacheService.swift in Sources */,
 				1296799E27BE68EC0036953B /* ErrorFactory.swift in Sources */,
 				129679B127BFC7A50036953B /* SearchRecentTableViewCell.swift in Sources */,
+				129679BF27C27FE80036953B /* CoreBindable.swift in Sources */,
 				129679A327BE6A250036953B /* AppleStoreSearchService.swift in Sources */,
 				129679B527C2112F0036953B /* AppCollectionViewCell.swift in Sources */,
 			);
