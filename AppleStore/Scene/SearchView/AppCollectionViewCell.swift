@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import Cosmos
 
 class AppCollectionViewCell: UICollectionViewCell {
     static let identifier = "AppCollectionViewCell"
@@ -20,6 +21,7 @@ class AppCollectionViewCell: UICollectionViewCell {
         UIImageView(),
         UIImageView(),
         ]
+    private var ratingView = CosmosView()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -51,6 +53,18 @@ class AppCollectionViewCell: UICollectionViewCell {
                 $0.font = .preferredFont(forTextStyle: .footnote)
                 $0.textColor = .lightGray
             }
+            $0.addArranged(UIStackView()) {
+                $0.addArranged(ratingView) {
+                    $0.settings.updateOnTouch = false
+                    $0.settings.starSize = 14
+                    $0.settings.filledColor = .lightGray
+                    $0.settings.filledBorderColor = .lightGray
+                    $0.settings.emptyBorderColor = .lightGray
+                    $0.settings.fillMode = .precise
+                }
+                $0.addArranged(UIView())
+            }
+
             $0.snp.makeConstraints { make in
                 make.leading.equalTo(self.iconImageView.snp.trailing).offset(16)
                 make.trailing.equalToSuperview().inset(96)
@@ -94,6 +108,7 @@ class AppCollectionViewCell: UICollectionViewCell {
         self.titleLabel.text = appModel.name
         self.descriptionLabel.text = appModel.genre
         self.iconImageView.setImage(appModel.icon)
+        self.ratingView.rating = appModel.averageUserRating
         if appModel.price != 0 {
             let handler: UIButton.ConfigurationUpdateHandler = {
                 var container = AttributeContainer()
@@ -108,6 +123,5 @@ class AppCollectionViewCell: UICollectionViewCell {
                 self.screenshotImageViews[i].setImage(v)
             }
         }
-        
     }
 }

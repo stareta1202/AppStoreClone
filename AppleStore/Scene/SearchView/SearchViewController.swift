@@ -162,6 +162,9 @@ extension SearchViewController: UICollectionViewDataSource {
 // MARK: UICollectionView Delegate
 
 extension SearchViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        self.navigationController?.pushViewController(ItemDetailViewController.instantiate(with: self.core.appModels[indexPath.row]), animated: true)
+    }
 }
 
 // MARK: UICollectionViewDelegateFlowLayout

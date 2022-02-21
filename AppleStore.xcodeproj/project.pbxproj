@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1283468327C35EE3008F2FAD /* Cosmos in Frameworks */ = {isa = PBXBuildFile; productRef = 1283468227C35EE3008F2FAD /* Cosmos */; };
+		1283468527C36AF3008F2FAD /* UIVIew+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1283468427C36AF3008F2FAD /* UIVIew+Extension.swift */; };
+		1283468827C3704E008F2FAD /* UserInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1283468727C3704E008F2FAD /* UserInterface.swift */; };
+		1283468A27C3A023008F2FAD /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1283468927C3A023008F2FAD /* DetailView.swift */; };
+		1283468D27C3A0EE008F2FAD /* ReleaseNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1283468C27C3A0EE008F2FAD /* ReleaseNoteView.swift */; };
 		1296798027BE63890036953B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1296797F27BE63890036953B /* AppDelegate.swift */; };
 		1296798227BE63890036953B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1296798127BE63890036953B /* SceneDelegate.swift */; };
 		1296798427BE63890036953B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1296798327BE63890036953B /* ViewController.swift */; };
@@ -33,6 +38,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1283468427C36AF3008F2FAD /* UIVIew+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIVIew+Extension.swift"; sourceTree = "<group>"; };
+		1283468727C3704E008F2FAD /* UserInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInterface.swift; sourceTree = "<group>"; };
+		1283468927C3A023008F2FAD /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		1283468C27C3A0EE008F2FAD /* ReleaseNoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReleaseNoteView.swift; sourceTree = "<group>"; };
 		1296797C27BE63890036953B /* AppleStore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppleStore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1296797F27BE63890036953B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1296798127BE63890036953B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -60,6 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1283468327C35EE3008F2FAD /* Cosmos in Frameworks */,
 				1296799527BE672B0036953B /* SnapKit in Frameworks */,
 				1296799B27BE678C0036953B /* CombineCocoa in Frameworks */,
 				129679A627BE6C4F0036953B /* Realm in Frameworks */,
@@ -71,6 +81,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1283468627C37044008F2FAD /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				1283468727C3704E008F2FAD /* UserInterface.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		1283468B27C3A0C4008F2FAD /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1283468927C3A023008F2FAD /* DetailView.swift */,
+				1283468C27C3A0EE008F2FAD /* ReleaseNoteView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		1296797327BE63890036953B = {
 			isa = PBXGroup;
 			children = (
@@ -90,6 +117,7 @@
 		1296797E27BE63890036953B /* AppleStore */ = {
 			isa = PBXGroup;
 			children = (
+				1283468627C37044008F2FAD /* Util */,
 				129679B627C220380036953B /* Extension */,
 				129679A127BE691E0036953B /* Model */,
 				129679A027BE69150036953B /* Scene */,
@@ -157,6 +185,7 @@
 			isa = PBXGroup;
 			children = (
 				129679B727C220480036953B /* UIImageView+Extension.swift */,
+				1283468427C36AF3008F2FAD /* UIVIew+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -164,6 +193,7 @@
 		129679BB27C232D80036953B /* ItemDetailView */ = {
 			isa = PBXGroup;
 			children = (
+				1283468B27C3A0C4008F2FAD /* Views */,
 				129679BC27C27E1B0036953B /* ItemDetailViewController.swift */,
 			);
 			path = ItemDetailView;
@@ -191,6 +221,7 @@
 				1296799A27BE678C0036953B /* CombineCocoa */,
 				129679A527BE6C4F0036953B /* Realm */,
 				129679A727BE6C4F0036953B /* RealmSwift */,
+				1283468227C35EE3008F2FAD /* Cosmos */,
 			);
 			productName = AppleStore;
 			productReference = 1296797C27BE63890036953B /* AppleStore.app */;
@@ -225,6 +256,7 @@
 				1296799627BE67380036953B /* XCRemoteSwiftPackageReference "addthen" */,
 				1296799927BE678C0036953B /* XCRemoteSwiftPackageReference "CombineCocoa" */,
 				129679A427BE6C4F0036953B /* XCRemoteSwiftPackageReference "realm-swift" */,
+				1283468127C35EE3008F2FAD /* XCRemoteSwiftPackageReference "Cosmos" */,
 			);
 			productRefGroup = 1296797D27BE63890036953B /* Products */;
 			projectDirPath = "";
@@ -255,11 +287,14 @@
 			files = (
 				129679AB27BE78BA0036953B /* SearchViewController.swift in Sources */,
 				129679AD27BE85CF0036953B /* SearchViewCore.swift in Sources */,
+				1283468D27C3A0EE008F2FAD /* ReleaseNoteView.swift in Sources */,
+				1283468527C36AF3008F2FAD /* UIVIew+Extension.swift in Sources */,
 				129679B327BFCBD10036953B /* RecentSearchModel.swift in Sources */,
 				1296798427BE63890036953B /* ViewController.swift in Sources */,
 				129679AF27BEA5F60036953B /* AppModel.swift in Sources */,
 				1296798027BE63890036953B /* AppDelegate.swift in Sources */,
 				129679B827C220480036953B /* UIImageView+Extension.swift in Sources */,
+				1283468A27C3A023008F2FAD /* DetailView.swift in Sources */,
 				1296798227BE63890036953B /* SceneDelegate.swift in Sources */,
 				129679BD27C27E1B0036953B /* ItemDetailViewController.swift in Sources */,
 				129679BA27C220A70036953B /* ImageCacheService.swift in Sources */,
@@ -267,6 +302,7 @@
 				129679B127BFC7A50036953B /* SearchRecentTableViewCell.swift in Sources */,
 				129679BF27C27FE80036953B /* CoreBindable.swift in Sources */,
 				129679A327BE6A250036953B /* AppleStoreSearchService.swift in Sources */,
+				1283468827C3704E008F2FAD /* UserInterface.swift in Sources */,
 				129679B527C2112F0036953B /* AppCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -489,6 +525,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		1283468127C35EE3008F2FAD /* XCRemoteSwiftPackageReference "Cosmos" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/evgenyneu/Cosmos.git";
+			requirement = {
+				kind = exactVersion;
+				version = 23.0.0;
+			};
+		};
 		1296799327BE672B0036953B /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
@@ -524,6 +568,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		1283468227C35EE3008F2FAD /* Cosmos */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1283468127C35EE3008F2FAD /* XCRemoteSwiftPackageReference "Cosmos" */;
+			productName = Cosmos;
+		};
 		1296799427BE672B0036953B /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 1296799327BE672B0036953B /* XCRemoteSwiftPackageReference "SnapKit" */;

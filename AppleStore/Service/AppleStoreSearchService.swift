@@ -13,10 +13,10 @@ class AppleStoreSearchService {
     typealias ErrorFactory = AppleStoreSearchServiceErrorFactory
     static let shared = AppleStoreSearchService()
     private let urlSession = URLSession.shared
-    private let url = "https://itunes.apple.com/search"
     
     func getList(_ query: String) -> AnyPublisher<AppResponse, Error> {
-        guard let queryUrl = URL(string:"https://itunes.apple.com/search" + "?" + "term=\(query)&entity=software,iPadSoftware&limit=10") else {
+        let url = "https://itunes.apple.com/search?term=\(query)&entity=software,iPadSoftware&limit=10".addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed) ?? ""
+        guard let queryUrl = URL(string:url) else {
             return Fail(error: ErrorFactory.invalidUrl()).eraseToAnyPublisher()
         }
         
